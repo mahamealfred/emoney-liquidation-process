@@ -1,0 +1,16 @@
+.bankreconciliation{
+    flex:4;
+    padding: 4px ;
+    margin-top: 4em; 
+}
+.bankreconciliationWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding: 0px 5px 5px;
+    margin-top: 2em;
+}
+.leftcontent{
+    padding: 5px;
+    margin-top: 2em;  
+}
