@@ -65,9 +65,9 @@ const ListTrsansfer = () => {
               <TableCell align="center">{row.service}</TableCell>
               <TableCell align="center">{row.amount}</TableCell>
               <TableCell align="center">{row.banktransaction}</TableCell>
-              <TableCell align="center">{row.authorisation}</TableCell>
+              <TableCell align="center">Accept</TableCell>
             </TableRow>
-          ))}
+       ))}
         </TableBody>
       </Table>
     </TableContainer>
