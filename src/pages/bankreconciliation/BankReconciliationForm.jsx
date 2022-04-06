@@ -15,6 +15,7 @@ const BankReconciliationForm = () => {
   };
   const [isSelected, setIsSelected] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
+  const date = new Date().toISOString().slice(0, 10);
 
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -33,14 +34,14 @@ const BankReconciliationForm = () => {
 
       <div className="bankreconciliation">
         <div className="dateText">
-          <Box>Mon, 04-04-2022</Box>
+          <Box>Bank Reconciliation</Box>
         </div>
         <Grid>
           <Paper elevation={10} style={paperStyle}>
             <div className="bankreconciliationWrapper">
               <div className="leftConciliation">
                 <Box>
-                  <div className="rightcontent">
+                  <div className="datecontent">
                     <div className="lefttitle">
                       <span className="textSpan">
                         <Stack component="form" noValidate spacing={3}>
@@ -48,8 +49,8 @@ const BankReconciliationForm = () => {
                             id="date"
                             label="Select Date"
                             type="date"
-                            defaultValue="2017-05-24"
-                            sx={{ width: 220 }}
+                            defaultValue={date}
+                            sx={{ width: 180,height:40 }}
                             InputLabelProps={{
                               shrink: true,
                             }}
@@ -97,11 +98,7 @@ const BankReconciliationForm = () => {
                         noValidate
                         autoComplete="off"
                       >
-                        <TextField
-                          id="outlined-basic"
-                          label="Amount"
-                          variant="outlined"
-                        />
+                       <TextField id="standard-basic" label="Amount" variant="standard" />
                       </Box>
                     </div>
                   </div>
@@ -142,7 +139,7 @@ const BankReconciliationForm = () => {
               </div>
               <div className="rightConciliation">
                 <Box>
-                  <div className="rightcontent">
+                  <div className="uploadcontent">
                     <div className="lefttitle">
                       <label>
                         <input style={{ display: "none" }} type="file" />
@@ -191,11 +188,7 @@ const BankReconciliationForm = () => {
                         noValidate
                         autoComplete="off"
                       >
-                        <TextField
-                          id="outlined-basic"
-                          label="Reference No"
-                          variant="outlined"
-                        />
+                       <TextField id="standard-basic" label="Reference No" variant="standard" />
                       </Box>
                     </div>
                   </div>
