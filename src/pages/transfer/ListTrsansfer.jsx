@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import SideBar from "../../components/siderBar/SideBar";
 import "./listtransfer.css";
 import Table from "@mui/material/Table";
@@ -13,6 +13,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 function createData(date, service, amount, banktransaction, authorisation) {
   return { date, service, amount, banktransaction, authorisation };
@@ -64,24 +66,40 @@ const ListTrsansfer = () => {
       <SideBar />
       <div className="listtransfer">
         <div className="dateDisplay">
-          <Box component="div" sx={{ display: "inline" }}>
-            <Box>
-              <div className="datecontent">
-                <Stack component="form" noValidate spacing={3}>
-                  <TextField
-                    id="date"
-                    label="Select Date"
-                    type="date"
-                    defaultValue={date}
-                    sm={{}}
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                  />
-                </Stack>
-              </div>
+          <div className="leftdatecontent">
+            <Box component="div" sx={{ display: "inline" }}>
+              <Box>
+                <div className="datecontent">
+                  <Stack component="form" noValidate spacing={3}>
+                    <TextField
+                      id="date"
+                      label="Select Date"
+                      type="date"
+                      defaultValue={date}
+                      sm={{}}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                    />
+                  </Stack>
+                </div>
+              </Box>
             </Box>
-          </Box>
+          </div>
+          <div className="rightdatecontent">
+          <Box component="div" sx={{ display: "inline" }}>
+              <Box>
+                <div className="datecontent">
+                  <Stack component="form" noValidate spacing={3}>
+                  <ButtonGroup variant="text" aria-label="text button group">
+                <Button>Generate PDF</Button>
+                <Button>Generate Excel</Button>
+              </ButtonGroup>
+                  </Stack>
+                </div>
+              </Box>
+            </Box>
+          </div>
         </div>
         <div className="tableDisplay">
           <DialogTitle>LIST OF TRANSFER TO BE AUTHORISED</DialogTitle>
@@ -141,6 +159,7 @@ const ListTrsansfer = () => {
           </TableContainer>
         </div>
       </div>
+      <SideBar />
     </>
   );
 };

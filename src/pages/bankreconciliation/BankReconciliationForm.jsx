@@ -210,6 +210,7 @@ const BankReconciliationForm = () => {
           </Paper>
         </Grid>
       </div>
+      <SideBar />
     </>
   );
 };
