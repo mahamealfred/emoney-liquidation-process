@@ -12,7 +12,7 @@ const ChangePassword = () => {
     const paperStyle = {
         padding: 30,
         height: "50vh",
-        width: 280,
+        width: 300,
         margin: "80px auto",
       };
 

@@ -4,6 +4,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 const Topbar = () => {
+  const isAuth = localStorage.getItem("access-token");
+  
   return (
     <div className="topbar">
         <div className="topbarWrapper">
@@ -15,13 +17,17 @@ const Topbar = () => {
             eMoney Liquidation Process
              </span>
             </div>
+            
             <div className="topRight">
+            {
+                !isAuth ?null: 
             <Stack spacing={2} direction="row">
             <Button variant="text">BEN</Button>
-           <Button variant="outlined">Logout</Button>
+            <Button variant="outlined">Logout</Button>
            </Stack>
+              }
             </div>
-
+       
         </div>
 
     </div>

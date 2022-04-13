@@ -8,9 +8,10 @@ import { Button, Grid, Paper } from "@material-ui/core";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 
+
 const BankReconciliationForm = () => {
   const btnStyle = {
-    margin: "4px 0px",
+    margin: "0px 0px",
     width: 300,
   };
   const [isSelected, setIsSelected] = useState(false);
@@ -23,7 +24,7 @@ const BankReconciliationForm = () => {
   };
   const paperStyle = {
     padding: 20,
-    height: "65vh",
+    height: "70vh",
     width: 1000,
     margin: "80px auto",
   };
@@ -63,7 +64,7 @@ const BankReconciliationForm = () => {
                 <Box>
                   <div className="leftcontent">
                     <div className="lefttitle">
-                      <span className="textSpan">MOBICORE AMOUNT</span>
+                      <Button variant='text' className="textSpan">MOBICORE AMOUNT</Button>
                     </div>
                     <div className="amount">
                       <span>xxxx</span>
@@ -73,7 +74,7 @@ const BankReconciliationForm = () => {
                 <Box>
                   <div className="leftcontent">
                     <div className="lefttitle">
-                      <span className="textSpan">MISSED ON BANK</span>
+                      <Button variant="text" className="textSpan">MISSED ON BANK</Button>
                     </div>
                     <div className="amount">
                       <span>xxxx</span>
@@ -128,7 +129,7 @@ const BankReconciliationForm = () => {
                   <div className="delta">
                     <div className="leftcontent">
                       <div className="lefttitledelta">
-                        <span className="textSpan">DELTA</span>
+                        <Button variant="text" className="textSpan">DELTA</Button>
                       </div>
                       <div className="amount">
                         <span>xxxx</span>
@@ -153,7 +154,7 @@ const BankReconciliationForm = () => {
                 <Box>
                   <div className="leftcontent">
                     <div className="lefttitle">
-                      <span className="textSpan">BANK AMOUNTS</span>
+                      <Button variant="text" className="textSpan">BANK AMOUNTS</Button>
                     </div>
                     <div className="amount">
                       <span>xxxx</span>
@@ -163,7 +164,7 @@ const BankReconciliationForm = () => {
                 <Box>
                   <div className="leftcontent">
                     <div className="lefttitle">
-                      <span className="textSpan">MISSED ON MOBICORE</span>
+                      <Button variant="text" className="textSpan">MISSED ON MOBICORE</Button>
                     </div>
                     <div className="amount">
                       <span>xxxx</span>

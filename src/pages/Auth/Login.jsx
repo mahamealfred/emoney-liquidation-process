@@ -12,12 +12,19 @@ import {
     TextField,
     Typography,
   } from "@material-ui/core";
-const Login = () => {
+  import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import { loginAction } from "../../redux/actions/userLoginAction";
+import { useDispatch, useSelector } from "react-redux";
 
+const Login = () => {
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const history = useHistory();
     const paperStyle = {
         padding: 20,
         height: "50vh",
-        width: 280,
+        width: 300,
         margin: "80px auto",
       };
 
@@ -39,11 +46,11 @@ const Login = () => {
         username: Yup.string().required("Please enter  Username"),
         password: Yup.string().required("Required"),
       });
-      const history=useHistory();
+      
       const onSubmit = (values, props) => {
-        console.log(values);
-        // dispatch(loginAction(values, history));
-        history.push('/authorizedtransfer')
+           console.log("values",values);
+         dispatch(loginAction(values, history));
+        // history.push('/authorizedtransfer')
       };
   return (
     <Grid>
@@ -78,7 +85,6 @@ const Login = () => {
                   required
                   helperText={<ErrorMessage name="password" />}
                 />
-
                 <Field
                   as={FormControlLabel}
                   name="remember"
@@ -86,15 +92,26 @@ const Login = () => {
                   label="Remember me"
                 />
                
+                 {
+                  !userLogin.error ? null:
+                  <Stack sx={{ width: '100%' }} spacing={2}>
+              <Alert variant="filled" severity="error">
+                  {userLogin.error}
+                   </Alert>
+                   </Stack>
+                   
+                }
+               
                 <Button
                   type="submit"
                   color="primary"
                   variant="contained"
                   fullWidth
                   style={btnStyle}
-                  disabled={props.isSubmitting}
+                  // disabled={props.isSubmitting}
+                 
                 >
-                Send
+               {userLogin.loading ? "Loading" : "Send"}
                 </Button>
               </Form>
             )}
